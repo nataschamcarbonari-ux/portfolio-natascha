@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <div className="hero__content">
         <p className="hero__eyebrow">Design Strategist · Product Design</p>
         <h1 className="hero__name">
-          Natascha<br />Carbonari
+          NATASCHA<br />CARBONARI
         </h1>
         <p className="hero__desc">
           Intern at Dell Technologies · UFRGS student.
