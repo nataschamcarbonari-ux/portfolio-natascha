@@ -12,14 +12,17 @@ const StepHero: React.FC<StepHeroProps> = ({ step, total }) => {
     <section className="step-hero">
       <div className="step-hero__blob" />
 
+      {/* White eyebrow — styled via .step-hero__eyebrow in components.css */}
       <p className="step-hero__eyebrow">
         Step {String(step.id).padStart(2, '0')} of {String(total).padStart(2, '0')}
       </p>
 
+      {/* Gradient title — styled via .step-hero__title in components.css */}
       <h1 className="step-hero__title">{step.title}</h1>
 
       <p className="step-hero__subtitle">{step.subtitle}</p>
 
+      {/* Tags — variant="default" is now white border + white text */}
       <div className="step-hero__tags">
         {step.tags.map((tag) => (
           <Tag key={tag} label={tag} variant="default" />

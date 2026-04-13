@@ -6,7 +6,7 @@ const ProjectIntro: React.FC = () => {
 
       <div className="project-intro__text reveal">
         <p className="section-label">Featured Project</p>
-        <h2 className="section-title">
+        <h2 className="gradient section-title">
           Futures —<br />Personal Productivity
         </h2>
         <p className="section-body">

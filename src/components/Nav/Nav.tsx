@@ -11,7 +11,7 @@ const Nav: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+    <nav className={`nav ${scrolled ? 'nav--scrolled' : 'nav--normal'}`}>
       <Link to="/" className="nav__logo">NC</Link>
       <ul className="nav__links">
         <li><a href="#project">Project</a></li>
