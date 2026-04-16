@@ -1,29 +1,11 @@
 import React from 'react';
+import type { Outcome } from '../../types';
 
-const outcomes = [
-  {
-    num: '01',
-    title: 'Strategic Clarity',
-    text: 'Defined a precise problem space within a broad theme using structured research methods and prioritization frameworks.',
-  },
-  {
-    num: '02',
-    title: 'User Insight',
-    text: "Deep understanding of hybrid and remote worker behaviors, mapped against Dell's established user archetypes.",
-  },
-  {
-    num: '03',
-    title: 'Concept Design',
-    text: 'Generated and refined product concepts across the full focus cycle — Before, During, and After sessions.',
-  },
-  {
-    num: '04',
-    title: 'Ecosystem Fit',
-    text: "Aligned solutions with Dell's product strategy and hardware ecosystem, ensuring viability within the company's design language.",
-  },
-];
+interface OutcomesProps {
+  outcomes: Outcome[];
+}
 
-const Outcomes: React.FC = () => {
+const Outcomes: React.FC<OutcomesProps> = ({ outcomes }) => {
   return (
     <section id="outcomes" className="outcomes">
 
@@ -35,11 +17,11 @@ const Outcomes: React.FC = () => {
       </div>
 
       <div className="outcomes__grid reveal">
-        {outcomes.map((o) => (
-          <div key={o.num} className="outcomes__card">
-            <p className="outcomes__card-num">{o.num}</p>
+        {outcomes.map((o, i) => (
+          <div key={o.id} className="outcomes__card">
+            <p className="outcomes__card-num">{String(i + 1).padStart(2, '0')}</p>
             <h3 className="outcomes__card-title">{o.title}</h3>
-            <p className="outcomes__card-text">{o.text}</p>
+            <p className="outcomes__card-text">{o.description}</p>
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../styles/styles.css";
+import '../../styles/styles.css';
 
 const Hero: React.FC = () => {
   return (
@@ -19,14 +19,6 @@ const Hero: React.FC = () => {
           Bridging research, systems thinking, and design
           to create meaningful outcomes.
         </p>
-        <a href="#process" className="hero__cta">
-          Explore the project →
-        </a>
-      </div>
-
-      <div className="hero__scroll">
-        <span className="hero__scroll-line" />
-        <span>Scroll</span>
       </div>
     </section>
   );

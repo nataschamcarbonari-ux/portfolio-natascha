@@ -1,31 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Tag from '../ui/Tag/Tag';
-import { steps } from '../../data/steps';
+import type { Step } from '../../types';
+
+interface ProcessListProps {
+  steps: Step[];
+  projectSlug: string;
+}
 
 /**
  * Vertical sinusoidal wave connector that snakes between step cards.
  * The wave alternates left→right→left matching the card alignment.
  * Gradient: purple (#7b5ea7) → navy (#2d4a8a) → teal (#1a6b8a)
- * — same palette as the original presentation.
  */
-const WaveConnector: React.FC = () => {
-  const STEP_H = 200;   // height per step row in px
-  const TOTAL  = (steps.length - 1) * STEP_H;
-  const CX     = 90;    // center X of the SVG
-  const AMP    = 60;    // horizontal swing amplitude
+interface WaveConnectorProps {
+  totalSteps: number;
+}
 
-  // Build smooth S-curves with cubic beziers
+const WaveConnector: React.FC<WaveConnectorProps> = ({ totalSteps }) => {
+  const STEP_H = 200;
+  const TOTAL  = (totalSteps - 1) * STEP_H;
+  const CX     = 90;
+  const AMP    = 60;
+
   let d = `M ${CX} 0`;
-  for (let i = 0; i < steps.length - 1; i++) {
+  for (let i = 0; i < totalSteps - 1; i++) {
     const y0   = i * STEP_H;
     const y1   = (i + 1) * STEP_H;
     const xEnd = i % 2 === 0 ? CX + AMP : CX - AMP;
     const xCur = i % 2 === 0 ? CX - AMP : CX + AMP;
 
-    if (i === 0) {
-      d = `M ${CX} 0`;
-    }
+    if (i === 0) d = `M ${CX} 0`;
 
     d += ` C ${xCur} ${y0 + STEP_H * 0.45}, ${xEnd} ${y0 + STEP_H * 0.55}, ${xEnd} ${y1}`;
   }
@@ -58,7 +63,7 @@ const WaveConnector: React.FC = () => {
   );
 };
 
-const ProcessList: React.FC = () => {
+const ProcessList: React.FC<ProcessListProps> = ({ steps, projectSlug }) => {
   return (
     <section id="process" className="process-list surface-dark">
 
@@ -70,10 +75,8 @@ const ProcessList: React.FC = () => {
       </div>
 
       <div className="process-list__wave-layout">
-        {/* The organic wave running through the centre */}
-        <WaveConnector />
+        <WaveConnector totalSteps={steps.length} />
 
-        {/* Step cards — alternating left / right */}
         <div className="process-list__steps">
           {steps.map((step, i) => {
             const isRight = i % 2 !== 0;
@@ -82,7 +85,7 @@ const ProcessList: React.FC = () => {
                 key={step.id}
                 className={`wave-step wave-step--${isRight ? 'right' : 'left'} reveal`}
               >
-                <Link to={`/step/${step.id}`} className="wave-card">
+                <Link to={`/project/${projectSlug}/step/${step.id}`} className="wave-card">
                   <p className="wave-card__num">{String(step.id).padStart(2, '0')}</p>
                   <h3 className="wave-card__title">{step.title}</h3>
                   <p className="wave-card__subtitle">{step.subtitle}</p>

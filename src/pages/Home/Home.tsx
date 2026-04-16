@@ -1,44 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Nav from '../../components/Nav/Nav';
 import Hero from '../../components/Hero/Hero';
-import ProjectIntro from '../../components/ProjectIntro/ProjectIntro';
-import ProcessList from '../../components/ProcessList/ProcessList';
-import Outcomes from '../../components/Outcomes/Outcomes';
+import ProjectsSection from '../../components/ProjectsSection/ProjectsSection';
 import About from '../../components/About/About';
 import Footer from '../../components/Footer/Footer';
+import { projects } from '../../data/projects';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 const Home: React.FC = () => {
-  useEffect(() => {
-    // Scroll reveal observer
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, i * 80);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08 }
-    );
-
-    reveals.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
+  useScrollReveal();
 
   return (
     <>
       <Nav />
       <main>
         <Hero />
-        <ProjectIntro />
-        <ProcessList />
-        <Outcomes />
+        <ProjectsSection projects={projects} />
         <About />
       </main>
       <Footer />
