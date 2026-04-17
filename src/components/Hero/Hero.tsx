@@ -10,14 +10,14 @@ const Hero: React.FC = () => {
       <div className="hero__blob hero__blob--3" />
 
       <div className="hero__content">
-        <p className="hero__eyebrow">Design Strategist · Product Design</p>
+        <p className="hero__eyebrow">Product Designer · Strategic Design </p>
         <h1 className="gradient hero__name">
           Natascha<br />Carbonari
         </h1>
         <p className="hero__desc">
-          Intern at Dell Technologies · UFRGS student.<br />
-          Bridging research, systems thinking, and design
-          to create meaningful outcomes.
+          Part of Dell's Client Innovation team (Austin/TX) · UFRGS student.
+Driving AI-first solutions by bridging business, users, and technology
+          to create meaningful, sustainable products.
         </p>
       </div>
     </section>

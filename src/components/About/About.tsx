@@ -1,12 +1,12 @@
 import React from 'react';
 
 const skills = [
-  { label: 'Research',   name: 'User Research'    },
-  { label: 'Strategy',   name: 'Design Strategy'  },
-  { label: 'Tools',      name: 'Figma'             },
-  { label: 'Methods',    name: 'HCD Process'       },
-  { label: 'Frameworks', name: 'Systems Thinking'  },
-  { label: 'Education',  name: 'UFRGS'             },
+  { label: 'Research',    name: 'User Research'     },
+  { label: 'Strategy',    name: 'Design Strategy'   },
+  { label: 'Tools',       name: 'Figma & Figma Make'              },
+  { label: 'Methods',     name: 'Design Thinking'    },
+  { label: 'Frameworks',  name: 'Agile · Lean UX'   },
+  { label: 'Education',   name: 'UFRGS · Dell Design Academy'      },
 ];
 
 const About: React.FC = () => {
@@ -19,11 +19,25 @@ const About: React.FC = () => {
           Designing<br />with intent
         </h2>
         <p className="about__body">
-          I'm Natascha, a Product Design intern at Dell Technologies and
-          undergraduate student at UFRGS. My goal is to become a Design
-          Strategist — someone who bridges research, systems thinking, and
-          design to create meaningful outcomes. I care about understanding
-          <em> why</em> before deciding <em>what</em>.
+          I'm Natascha, a <em>Product Designer</em> currently interning at Dell
+          Technologies' Client Innovation team — part of Dell's Austin, TX
+          operation. I'm also an undergraduate Product Design student at{' '}
+          <em>UFRGS</em>, with a background in Mechanical Engineering.
+        </p>
+        <p className="about__body">
+          My goal is to become a <em>Design Strategist</em> — someone who bridges
+          user research, systems thinking, and strategic design to create outcomes
+          that matter. I work across the full product lifecycle: from initial
+          research and synthesis to high-fidelity prototyping and usability
+          validation, in Agile and Lean UX environments.
+        </p>
+        <p className="about__body">
+          I'm an active member of the{' '}
+          <em>Interaction Design Foundation (IxDF)</em> in Porto Alegre, where I
+          engage with the local UX community to exchange ideas and stay current in
+          the field. As a personal project, I'm collaborating with a developer to
+          build an app that manages the tennis ranking system for a sports club in
+          Brazil.
         </p>
         <div className="about__links">
           <a
@@ -34,7 +48,7 @@ const About: React.FC = () => {
           >
             LinkedIn <span className="about__link-arrow">↗</span>
           </a>
-          <a href="mailto:natascha@email.com" className="about__link">
+          <a href="mailto:nataschamcarbonari@gmail.com" className="about__link">
             Email <span className="about__link-arrow">↗</span>
           </a>
         </div>
