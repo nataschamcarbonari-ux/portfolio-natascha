@@ -1,0 +1,390 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Sora',var(--font-sans),sans-serif;background:#F0F1F4;color:#0E1325;padding:24px 16px}
+.page-title{font-size:22px;font-weight:500;color:#161D37;margin-bottom:4px}
+.page-sub{font-size:13px;color:#4E69CA;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.card{background:#fff;border:0.5px solid rgba(0,0,0,0.12);border-radius:12px;padding:20px}
+.card-title{font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#4E69CA;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #ABB4D4}
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(68px,1fr));gap:6px}
+.swatch{border-radius:6px;overflow:hidden}
+.swatch-box{height:36px;width:100%}
+.swatch-label{font-size:9px;color:#243B8E;padding:3px 2px;line-height:1.3;word-break:break-all}
+.semantic-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.sem-swatch{flex:1;min-width:80px;border-radius:6px;padding:10px 8px;font-size:11px;font-weight:500;text-align:center}
+.type-row{display:flex;align-items:baseline;gap:10px;padding:6px 0;border-bottom:0.5px solid #D3D5DF}
+.type-row:last-child{border-bottom:none}
+.type-meta{font-size:10px;color:#768AD6;min-width:110px;flex-shrink:0}
+.btn-group{display:flex;flex-direction:column;gap:10px}
+.btn-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn-label{font-size:10px;color:#768AD6;min-width:70px}
+.ds-btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-family:inherit;font-weight:600;cursor:pointer;transition:background .15s}
+.ds-btn-primary{background:#243B8E;color:#fff;border:none}
+.ds-btn-primary:hover{background:#1C2A5F}
+.ds-btn-secondary{background:transparent;color:#243B8E;border:1px solid #243B8E}
+.ds-btn-underlined{background:transparent;color:#B35300;border:none;text-decoration:underline;padding:0;border-radius:0}
+.ds-btn-sm{font-size:13px;padding:4px 12px}
+.ds-btn-md{font-size:13px;padding:8px 20px}
+.ds-btn-lg{font-size:13px;padding:10px 28px}
+.ds-btn:disabled{opacity:.45;cursor:not-allowed}
+.badge-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.ds-badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:11px;font-weight:600}
+.badge-sobe{background:#dff4e8;color:#2a7a4f}
+.badge-desce{background:#E4D8CD;color:#803C00}
+.badge-mantem{background:#F0F1F4;color:#4E69CA}
+.badge-pausado{background:#F6F2EE;color:#B35300}
+.badge-pendente{background:#E4D8CD;color:#803C00}
+.badge-finalizado{background:#dff4e8;color:#2a7a4f}
+.input-col{display:flex;flex-direction:column;gap:10px}
+.ds-label{font-size:12px;font-weight:600;color:#243B8E;display:block;margin-bottom:3px}
+.ds-input{padding:9px 16px;width:100%;border-radius:999px;border:1px solid #D3D5DF;background:#fff;color:#243B8E;font-size:13px;font-family:inherit;outline:none}
+.ds-input:focus{border-color:#768AD6}
+.ds-input-error{border-color:#dc2626}
+.search-wrap{position:relative}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:#768AD6;pointer-events:none}
+.ds-search{padding:8px 8px 8px 36px;width:100%;border-radius:999px;border:none;background:#F0F1F4;font-size:13px;font-family:inherit;outline:none;color:#0E1325}
+.feedback-col{display:flex;flex-direction:column;gap:10px}
+.ds-alert-error{padding:9px 13px;background:#fef3e2;border-radius:6px;color:#492E0A;font-size:13px;border:1px solid #B35300}
+.ds-error-alert{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#F6F2EE;border-radius:8px;color:#492E0A;border:1px solid #B35300}
+.ds-empty{color:#768AD6;font-size:13px;font-style:italic}
+.ds-spinner{display:flex;align-items:center;gap:8px;font-size:13px;color:#4E69CA}
+.spinner-ring{width:18px;height:18px;border:2px solid #D3D5DF;border-top:2px solid #4E69CA;border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.radius-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.radius-box{background:#ABB4D4;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:4px;gap:2px}
+.radius-label{font-size:10px;color:#1C2A5F;text-align:center}
+.spacing-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.space-item{display:flex;flex-direction:column;align-items:center;gap:4px}
+.space-block{background:#4E69CA;border-radius:3px;width:100%}
+.space-label{font-size:10px;color:#1C2A5F;text-align:center}
+.dialog-backdrop{position:relative;min-height:200px;background:rgba(14,19,37,.45);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:16px}
+.dialog-card{background:#fff;border-radius:14px;padding:22px 24px 18px;width:100%;max-width:340px}
+.dialog-title{font-size:15px;font-weight:600;color:#161D37;margin-bottom:6px}
+.dialog-desc{font-size:12px;color:#243B8E;line-height:1.5;margin-bottom:16px}
+.dialog-actions{display:flex;justify-content:flex-end;gap:8px}
+.dialog-trigger-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.icon-sm{width:18px;height:18px;flex-shrink:0}
+.wide{grid-column:1/-1}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+
+<h1 class="page-title">Paladino Design System</h1>
+<p class="page-sub">Visual reference · tokens, components and styles</p>
+
+<div class="grid">
+
+<div class="card wide">
+  <div class="card-title">Color Palette — Blue</div>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="swatch-box" style="background:#F0F1F4"></div><div class="swatch-label">blue-50<br>#F0F1F4</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#D3D5DF"></div><div class="swatch-label">blue-100<br>#D3D5DF</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#ABB4D4"></div><div class="swatch-label">blue-200<br>#ABB4D4</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#768AD6"></div><div class="swatch-label">blue-300<br>#768AD6</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#4E69CA"></div><div class="swatch-label">blue-400<br>#4E69CA</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#3550B1"></div><div class="swatch-label">blue-500<br>#3550B1</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#243B8E"></div><div class="swatch-label">blue-600<br>#243B8E</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#1C2A5F"></div><div class="swatch-label">blue-700<br>#1C2A5F</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#161D37"></div><div class="swatch-label">blue-800<br>#161D37</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#0E1325"></div><div class="swatch-label">blue-900<br>#0E1325</div></div>
+  </div>
+  <div style="margin-top:14px" class="card-title">Color Palette — Orange</div>
+  <div class="swatch-grid">
+    <div class="swatch"><div class="swatch-box" style="background:#F6F2EE"></div><div class="swatch-label">orange-50<br>#F6F2EE</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#E4D8CD"></div><div class="swatch-label">orange-100<br>#E4D8CD</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#E6BD99"></div><div class="swatch-label">orange-200<br>#E6BD99</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#FFA04D"></div><div class="swatch-label">orange-300<br>#FFA04D</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#FF7800"></div><div class="swatch-label">orange-400<br>#FF7800</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#E66B00"></div><div class="swatch-label">orange-500<br>#E66B00</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#B35300"></div><div class="swatch-label">orange-600<br>#B35300</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#803C00"></div><div class="swatch-label">orange-700<br>#803C00</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#452408"></div><div class="swatch-label">orange-800<br>#452408</div></div>
+    <div class="swatch"><div class="swatch-box" style="background:#2E1805"></div><div class="swatch-label">orange-900<br>#2E1805</div></div>
+  </div>
+  <div style="margin-top:14px" class="card-title">Semantics</div>
+  <div class="semantic-row">
+    <div class="sem-swatch" style="background:#dff4e8;color:#2a7a4f">success<br><span style="font-weight:400;font-size:10px">#dff4e8 · #2a7a4f</span></div>
+    <div class="sem-swatch" style="background:#fef3e2;color:#492E0A">error bg<br><span style="font-weight:400;font-size:10px">#fef3e2 · text #492E0A</span></div>
+    <div class="sem-swatch" style="background:#F6F2EE;color:#B35300">orange-50<br><span style="font-weight:400;font-size:10px">used for warning</span></div>
+    <div class="sem-swatch" style="background:#dc2626;color:#fff">danger<br><span style="font-weight:400;font-size:10px">#dc2626</span></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Typography</div>
+  <div class="type-row">
+    <span class="type-meta">h1 · 20px / 700</span>
+    <h1 style="font-size:20px;font-weight:700;color:#161D37">Heading H1</h1>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">h2 · 18px / 600</span>
+    <h2 style="font-size:18px;font-weight:600;color:#243B8E">Heading H2</h2>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">h3 · 16px / 600</span>
+    <h3 style="font-size:16px;font-weight:600;color:#243B8E">Heading H3</h3>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">h4 · 16px / 600</span>
+    <h4 style="font-size:16px;font-weight:600;color:#1C2A5F">Heading H4</h4>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">p · 16px / 400</span>
+    <p style="font-size:16px;color:#0E1325">Standard body text paragraph</p>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">label · 14px / 600</span>
+    <label style="font-size:14px;font-weight:600;color:#243B8E">Field label</label>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">a · 14px / orange</span>
+    <a href="#" style="font-size:14px;color:#B35300;text-decoration:underline">Action link</a>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">sm · 14px / 400</span>
+    <span style="font-size:14px;color:#0E1325">Small text (sm)</span>
+  </div>
+  <div class="type-row">
+    <span class="type-meta">xs · 12px / 400</span>
+    <span style="font-size:12px;color:#768AD6">Extra-small text (xs)</span>
+  </div>
+  <div style="margin-top:10px;font-size:11px;color:#768AD6">Family: <strong>Sora</strong>, sans-serif</div>
+</div>
+
+<div class="card">
+  <div class="card-title">Buttons</div>
+  <div class="btn-group">
+    <div>
+      <div style="font-size:10px;color:#768AD6;margin-bottom:6px">Primary</div>
+      <div class="btn-row">
+        <button class="ds-btn ds-btn-primary ds-btn-sm">sm</button>
+        <button class="ds-btn ds-btn-primary ds-btn-md">md</button>
+        <button class="ds-btn ds-btn-primary ds-btn-lg">lg</button>
+        <button class="ds-btn ds-btn-primary ds-btn-md" disabled>disabled</button>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:10px;color:#768AD6;margin-bottom:6px">Secondary</div>
+      <div class="btn-row">
+        <button class="ds-btn ds-btn-secondary ds-btn-sm">sm</button>
+        <button class="ds-btn ds-btn-secondary ds-btn-md">md</button>
+        <button class="ds-btn ds-btn-secondary ds-btn-lg">lg</button>
+        <button class="ds-btn ds-btn-secondary ds-btn-md" disabled>disabled</button>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:10px;color:#768AD6;margin-bottom:6px">Underlined</div>
+      <div class="btn-row">
+        <button class="ds-btn ds-btn-underlined" style="font-size:13px">Action link</button>
+        <button class="ds-btn ds-btn-underlined" style="font-size:13px;opacity:.45;cursor:not-allowed">disabled</button>
+      </div>
+    </div>
+    <div style="margin-top:4px;padding:10px;background:#F0F1F4;border-radius:8px">
+      <div style="font-size:10px;color:#768AD6;margin-bottom:8px">Full width</div>
+      <button class="ds-btn ds-btn-primary ds-btn-md" style="width:100%">Full-width button</button>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Badges</div>
+  <div class="badge-row">
+    <span class="ds-badge badge-sobe">↑ Rising</span>
+    <span class="ds-badge badge-desce">↓ Falling</span>
+    <span class="ds-badge badge-mantem">= Steady</span>
+    <span class="ds-badge badge-pausado">Paused</span>
+    <span class="ds-badge badge-pendente">Pending</span>
+    <span class="ds-badge badge-finalizado">Finished</span>
+  </div>
+  <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px">
+    <div style="padding:8px 10px;background:#dff4e8;border-radius:6px">
+      <div style="font-size:10px;font-weight:600;color:#2a7a4f;text-transform:uppercase;letter-spacing:.05em">rising / finished</div>
+      <div style="font-size:11px;color:#2a7a4f;margin-top:2px">bg #dff4e8 · text #2a7a4f</div>
+    </div>
+    <div style="padding:8px 10px;background:#E4D8CD;border-radius:6px">
+      <div style="font-size:10px;font-weight:600;color:#803C00;text-transform:uppercase;letter-spacing:.05em">falling / pending</div>
+      <div style="font-size:11px;color:#803C00;margin-top:2px">bg #E4D8CD · text #803C00</div>
+    </div>
+    <div style="padding:8px 10px;background:#F0F1F4;border-radius:6px">
+      <div style="font-size:10px;font-weight:600;color:#4E69CA;text-transform:uppercase;letter-spacing:.05em">steady</div>
+      <div style="font-size:11px;color:#4E69CA;margin-top:2px">bg #F0F1F4 · text #4E69CA</div>
+    </div>
+    <div style="padding:8px 10px;background:#F6F2EE;border-radius:6px">
+      <div style="font-size:10px;font-weight:600;color:#B35300;text-transform:uppercase;letter-spacing:.05em">paused</div>
+      <div style="font-size:11px;color:#B35300;margin-top:2px">bg #F6F2EE · text #B35300</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Inputs</div>
+  <div class="input-col">
+    <div>
+      <span class="ds-label">Default field</span>
+      <input class="ds-input" placeholder="Placeholder here..." type="text">
+    </div>
+    <div>
+      <label class="ds-label" for="ds-search-demo">Search with icon</label>
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 -960 960 960" fill="currentColor"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+        <input id="ds-search-demo" class="ds-search" placeholder="Search player..." type="text">
+      </div>
+    </div>
+    <div>
+      <span class="ds-label">Focused field (blue-300 border)</span>
+      <input class="ds-input" style="border-color:#768AD6" placeholder="Focused..." type="text">
+    </div>
+    <div>
+      <span class="ds-label">Field with error</span>
+      <input class="ds-input ds-input-error" value="invalid-email" type="text">
+      <span style="font-size:11px;color:#dc2626;margin-top:3px;display:block">Required field.</span>
+    </div>
+    <div>
+      <span class="ds-label">Disabled</span>
+      <input class="ds-input" disabled value="Not editable" type="text">
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Feedback & alerts</div>
+  <div class="feedback-col">
+    <div>
+      <div style="font-size:10px;color:#768AD6;margin-bottom:5px">Alert (simple error)</div>
+      <div class="ds-alert-error" role="alert">Required field. Please fill in before continuing.</div>
+    </div>
+    <div>
+      <div style="font-size:10px;color:#768AD6;margin-bottom:5px">ErrorAlert (card with icon)</div>
+      <div class="ds-error-alert" role="alert">
+        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span style="font-size:13px">Failed to connect to the server. Please try again.</span>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:10px;color:#768AD6;margin-bottom:5px">EmptyState</div>
+      <p class="ds-empty">No matches found.</p>
+    </div>
+    <div>
+      <div style="font-size:10px;color:#768AD6;margin-bottom:5px">LoadingSpinner</div>
+      <div class="ds-spinner">
+        <div class="spinner-ring"></div>
+        <span style="color:#4E69CA">Loading...</span>
+      </div>
+    </div>
+    <div style="padding:10px;background:#dff4e8;border-radius:8px">
+      <div style="font-size:11px;font-weight:600;color:#2a7a4f;margin-bottom:4px">Success banner</div>
+      <div style="font-size:12px;color:#2a7a4f">Draw completed! 48 matches generated in total.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">ConfirmDialog</div>
+  <div class="dialog-trigger-row">
+    <button class="ds-btn ds-btn-primary ds-btn-sm" onclick="showDialog('default')">Open default dialog</button>
+    <button class="ds-btn ds-btn-secondary ds-btn-sm" onclick="showDialog('danger')">Open danger dialog</button>
+  </div>
+  <div id="dialog-container"></div>
+</div>
+
+<div class="card">
+  <div class="card-title">Spacing</div>
+  <div class="spacing-row">
+    <div class="space-item">
+      <div class="space-block" style="height:4px;width:40px"></div>
+      <span class="space-label">4px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:8px;width:40px"></div>
+      <span class="space-label">8px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:12px;width:40px"></div>
+      <span class="space-label">12px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:16px;width:40px"></div>
+      <span class="space-label">16px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:20px;width:40px"></div>
+      <span class="space-label">20px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:24px;width:40px"></div>
+      <span class="space-label">24px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:28px;width:40px"></div>
+      <span class="space-label">28px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:32px;width:40px"></div>
+      <span class="space-label">32px</span>
+    </div>
+    <div class="space-item">
+      <div class="space-block" style="height:40px;width:40px"></div>
+      <span class="space-label">40px</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Border Radius</div>
+  <div class="radius-row">
+    <div class="space-item">
+      <div class="radius-box" style="width:48px;height:48px;border-radius:6px"></div>
+      <span class="radius-label">sm<br>6px</span>
+    </div>
+    <div class="space-item">
+      <div class="radius-box" style="width:48px;height:48px;border-radius:8px"></div>
+      <span class="radius-label">md<br>8px</span>
+    </div>
+    <div class="space-item">
+      <div class="radius-box" style="width:48px;height:48px;border-radius:12px"></div>
+      <span class="radius-label">lg<br>12px</span>
+    </div>
+    <div class="space-item">
+      <div class="radius-box" style="width:48px;height:48px;border-radius:14px"></div>
+      <span class="radius-label">xl<br>14px</span>
+    </div>
+    <div class="space-item">
+      <div class="radius-box" style="width:64px;height:32px;border-radius:999px"></div>
+      <span class="radius-label">pill<br>999px</span>
+    </div>
+    <div class="space-item">
+      <div class="radius-box" style="width:36px;height:36px;border-radius:50%"></div>
+      <span class="radius-label">circle<br>50%</span>
+    </div>
+  </div>
+  <div style="margin-top:16px">
+    <div style="font-size:10px;color:#768AD6;margin-bottom:8px">Tokens used in the project</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;font-size:11px">
+      <div style="background:#F0F1F4;border-radius:6px;padding:6px 8px;color:#243B8E"><code>--radius-sm</code><br>6px · alerts</div>
+      <div style="background:#F0F1F4;border-radius:8px;padding:6px 8px;color:#243B8E"><code>--radius-md</code><br>8px · inputs</div>
+      <div style="background:#F0F1F4;border-radius:12px;padding:6px 8px;color:#243B8E"><code>--radius-lg</code><br>12px · cards</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function showDialog(variant){
+  const c=document.getElementById('dialog-container');
+  const isDanger=variant==='danger';
+  c.innerHTML=`
+    <div class="dialog-backdrop">
+      <div class="dialog-card">
+        <div class="dialog-title">${isDanger?'Cancel Draw':'Confirm Draw'}</div>
+        <div class="dialog-desc">${isDanger?'Do you want to cancel the draw for Stage 3 of 2025? All generated matches will be removed.':'Do you want to run the draw for Stage 3 of 2025? This will generate all matches for the next stage.'}</div>
+        <div class="dialog-actions">
+          <button class="ds-btn ds-btn-secondary ds-btn-sm" onclick="closeDialog()">Cancel</button>
+          <button class="ds-btn ds-btn-primary ds-btn-sm">${isDanger?'Confirm cancellation':'Confirm'}</button>
+        </div>
+      </div>
+    </div>`;
+}
+function closeDialog(){document.getElementById('dialog-container').innerHTML='';}
+</script>
