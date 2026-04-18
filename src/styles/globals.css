@@ -23,7 +23,7 @@
   /* Accent gradient — single source of truth */
   --grad-start: #d310ff;
   --grad-mid: #656ff8;
-  --gradient-title: linear-gradient(90deg, #d310ff 10%, #656ff8 55%, #185ba236 100%);
+  --gradient-title: linear-gradient(125deg, #d310ff 0%, #656ff8 100%);
 
   /* Semantic color tokens */
   --color-primary: #d310ff;
