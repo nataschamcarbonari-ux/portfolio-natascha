@@ -154,7 +154,7 @@ export const stepContents: Record<string, Record<number, StepContent>> = {
             { label: 'Booking systems', text: 'How calendar availability, slot selection, and confirmations work in scheduling interfaces.' },
             { label: 'Player profiles', text: 'What information matters most on an athlete\'s profile — stats, history, contact.' },
           ],
-          images: ['https://www.canva.com/design/DAGIZiDgJls/63cvIpcIv8HtonjRkn17xA/view'],
+          images: ['/references.png'],
         },
 
         {
@@ -210,19 +210,19 @@ export const stepContents: Record<string, Record<number, StepContent>> = {
           label: 'Lo-fi first',
           heading: 'Sketching the structure before styling',
           body: "Every major flow started with lo-fi sketches on paper and rough wireframes. This phase was about testing information architecture and interaction logic — not aesthetics. It was also where I caught structural issues before they became expensive to fix.",
-          images: ['', ''],
+          images: ['/lo-fi.png'],
         },
         {
           label: 'Wireframes',
           heading: 'Translating structure into layout',
           body: "Mid-fidelity wireframes gave the developer enough to start working on architecture while I continued refining the visual design. We used these as the basis for our first round of scope alignment.",
-          images: [''],
+          images: ['/mid-fi.png'],
         },
         {
           label: 'High fidelity',
           heading: 'The screens as they were built',
           body: "High-fidelity prototypes were delivered in four phases aligned to the project roadmap: Login & Auth, Games Table, Rankings, and Player Profile. Each delivery included interactive prototypes in Figma for developer reference.",
-          images: ['', '', '', ''],
+          images: ['/hi-fi.png'],
         },
         {
           label: 'Key screens',

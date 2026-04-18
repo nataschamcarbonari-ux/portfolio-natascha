@@ -49,3 +49,45 @@
   .cards      { grid-template-columns: 1fr; }
   .imagesGrid { grid-template-columns: 1fr; }
 }
+
+/* ─── Embed (Canva, Figma, etc.) ─────────────────────────────────────────── */
+.embedWrapper {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.embedFrame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px;
+}
+
+.embedWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%; /* 16:9 — change to 100% for square Canva exports */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+  margin-top: 20px;
+  margin-bottom: 8px;
+  will-change: transform;
+}
+
+.embedCaption {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+.embedCaption:hover { opacity: 0.7; }

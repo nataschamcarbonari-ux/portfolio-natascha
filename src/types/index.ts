@@ -1,17 +1,17 @@
-/* ─── Step (used in data/projects.ts and throughout the app) ────────────────── */
+/* ─── Step ──────────────────────────────────────────────────────────────────── */
 export interface Step {
   id: number;
-  slug: string;       // e.g. 'step-01'
+  slug: string;
   title: string;
   subtitle: string;
   tags: string[];
 }
 
-/* ─── StepContent (richer data added later per step) ──────────────────────── */
+/* ─── StepContent ──────────────────────────────────────────────────────────── */
 export interface StepCard {
   label: string;
   text: string;
-  wide?: boolean;    // spans full width in the grid
+  wide?: boolean;
 }
 
 export interface StepSectionData {
@@ -19,7 +19,10 @@ export interface StepSectionData {
   heading: string;
   body: string;
   cards?: StepCard[];
-  images?: string[];  // image paths / URLs
+  images?: string[];
+  embedUrl?: string;   // ← iframe embed URL (Canva, Figma, etc.)
+  embedCaption?: string; // ← optional link text below the embed
+  embedHref?: string;  // ← optional href for the caption link
 }
 
 export interface StepContent {
@@ -37,13 +40,13 @@ export interface Outcome {
 /* ─── Project ──────────────────────────────────────────────────────────────── */
 export interface Project {
   id: number;
-  slug: string;         // e.g. 'futures'
-  title: string;        // e.g. 'Futures — Personal Productivity'
+  slug: string;
+  title: string;
   description: string;
-  context: string;      // e.g. 'Dell Technologies'
-  role: string;         // e.g. 'Design Strategy Intern'
-  theme: string;        // e.g. 'Personal Productivity'
-  featured?: boolean;   // displayed as featured card on home
+  context: string;
+  role: string;
+  theme: string;
+  featured?: boolean;
   steps: Step[];
   outcomes: Outcome[];
   tags?: string[];

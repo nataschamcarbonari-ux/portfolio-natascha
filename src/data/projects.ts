@@ -12,7 +12,7 @@ export const projects: Project[] = [
     theme: 'Personal Productivity',
     featured: true,
     tags: ['Design Strategy', 'HCD Process', 'Research'],
-    coverImage: 'https://picsum.photos/seed/futures/1200/800',
+    coverImage: '/futures_inicio.png',
     steps: [
       {
         id: 1,
@@ -94,12 +94,12 @@ export const projects: Project[] = [
     title: 'TennisConnect',
     description:
       'A web platform that replaced a manual, Excel-based tennis ranking system at Clube Paladino with a real-time, accessible digital product — currently live and in testing.',
-    context: 'Personal Project · Clube Paladino',
+    context: 'Personal Project · Paladino Tennis Club',
     role: 'Product Designer',
     theme: 'Sports · Digital Product',
     featured: false,
     tags: ['UX Research', 'Product Design', 'Design System', 'Prototyping'],
-    coverImage: 'https://picsum.photos/seed/tennisconnect/1200/800',
+    coverImage: '/inicio.png',
     steps: [
       {
         id: 1,
@@ -203,19 +203,6 @@ export const projects: Project[] = [
     theme: 'Service Design',
     tags: ['Service Design', 'Journey Mapping', 'Co-design'],
     coverImage: 'https://picsum.photos/seed/service/1200/800',
-    steps: [],
-    outcomes: [],
-  },
-  {
-    id: 6,
-    slug: 'motion-ui',
-    title: 'Motion & Interaction',
-    description: 'Designing micro-interactions and motion principles for a consumer mobile application.',
-    context: 'Consumer App',
-    role: 'Interaction Designer',
-    theme: 'Motion Design',
-    tags: ['Motion', 'Interaction Design', 'Prototyping'],
-    coverImage: 'https://picsum.photos/seed/motion/1200/800',
     steps: [],
     outcomes: [],
   },

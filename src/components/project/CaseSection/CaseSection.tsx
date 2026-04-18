@@ -25,9 +25,35 @@ const CaseSection: React.FC<CaseSectionProps> = ({ section, index }) => (
       </div>
     )}
 
-    {section.label === 'Opportunity mapping' ? (
+    {/* Canva / Figma / any iframe embed */}
+    {section.embedUrl && (
+      <div className={styles.embedWrapper}>
+        <iframe
+          loading="lazy"
+          className={styles.embedFrame}
+          src={section.embedUrl}
+          title={section.heading}
+          frameBorder="0"
+          allow="fullscreen"
+          allowFullScreen
+        />
+        {section.embedHref && (
+          <a
+            href={section.embedHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.embedCaption}
+          >
+            {section.embedCaption ?? 'View on Canva ↗'}
+          </a>
+        )}
+      </div>
+    )}
+
+    {/* Images (only rendered when no embed) */}
+    {!section.embedUrl && section.label === 'Opportunity mapping' ? (
       <OpportunityFlow />
-    ) : section.images && section.images.length > 0 ? (
+    ) : !section.embedUrl && section.images && section.images.length > 0 ? (
       <div className={clsx(styles.images, section.images.length > 1 ? styles.imagesGrid : '')}>
         {section.images.map((src, i) => (
           <ImagePlaceholder
@@ -38,11 +64,9 @@ const CaseSection: React.FC<CaseSectionProps> = ({ section, index }) => (
           />
         ))}
       </div>
-    ) : (
-      (!section.cards || section.cards.length === 0) && (
-        <ImagePlaceholder label="Add image" aspect="wide" />
-      )
-    )}
+    ) : !section.embedUrl && !section.cards?.length && section.label !== 'Opportunity mapping' ? (
+      <ImagePlaceholder label="Add image" aspect="wide" />
+    ) : null}
   </div>
 );
 
