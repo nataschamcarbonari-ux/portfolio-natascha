@@ -107,7 +107,7 @@ const ProjectDetail: React.FC = () => {
 
         {/* 2 — Hero image */}
         <section className={`${styles.heroImg} reveal`}>
-          <ImagePlaceholder label="Add hero image — product screenshot or cover" aspect="wide" />
+          <ImagePlaceholder src="/inicio.png" label="Add hero image — product screenshot or cover" aspect="wide" />
         </section>
 
         {/* 3 — Body: sidebar + steps */}
