@@ -11,7 +11,7 @@ export interface Step {
 export interface StepCard {
   label: string;
   text: string;
-  wide?: boolean;     // spans full width in the grid
+  wide?: boolean;    // spans full width in the grid
 }
 
 export interface StepSectionData {
