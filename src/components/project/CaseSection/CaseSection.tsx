@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 import Card from '../../ui/Card/Card';
 import ImagePlaceholder from '../../ui/ImagePlaceholder/ImagePlaceholder';
 import OpportunityFlow from '../../OpportunityFlow';
@@ -16,6 +17,10 @@ const CaseSection: React.FC<CaseSectionProps> = ({ section, index }) => (
     <p className={styles.label}>{section.label}</p>
     <h3 className={styles.heading}>{section.heading}</h3>
     {section.body && <p className={styles.body}>{section.body}</p>}
+
+    {section.linkText && section.linkHref && (
+      <Link to={section.linkHref} className={styles.link}>{section.linkText}</Link>
+    )}
 
     {section.cards && section.cards.length > 0 && (
       <div className={styles.cards}>

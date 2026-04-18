@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import ProjectDetail from '../pages/ProjectDetail/ProjectDetail';
 import StepDetail from '../pages/StepDetail/StepDetail';
+import TennisConnectDesignSystemPage from '../pages/TennisConnectDesignSystem/TennisConnectDesignSystemPage';
 
 export const router = createBrowserRouter([
   {
@@ -15,5 +16,9 @@ export const router = createBrowserRouter([
   {
     path: '/project/:slug/step/:id',
     element: <StepDetail />,
+  },
+  {
+    path: '/project/tennisconnect/design-system',
+    element: <TennisConnectDesignSystemPage />,
   },
 ]);

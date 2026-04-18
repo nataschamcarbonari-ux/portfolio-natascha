@@ -20,9 +20,11 @@ export interface StepSectionData {
   body: string;
   cards?: StepCard[];
   images?: string[];
-  embedUrl?: string;   // ← iframe embed URL (Canva, Figma, etc.)
-  embedCaption?: string; // ← optional link text below the embed
-  embedHref?: string;  // ← optional href for the caption link
+  embedUrl?: string;
+  embedCaption?: string;
+  embedHref?: string;
+  linkText?: string;
+  linkHref?: string;
 }
 
 export interface StepContent {

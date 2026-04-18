@@ -32,6 +32,16 @@
   margin-bottom: 24px;
 }
 
+.link {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #888;
+  text-decoration: underline;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+.link:hover { color: #fff; }
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;

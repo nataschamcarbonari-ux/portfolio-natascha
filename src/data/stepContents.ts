@@ -184,6 +184,8 @@ export const stepContents: Record<string, Record<number, StepContent>> = {
           label: 'Foundation first',
           heading: 'Building before designing',
           body: "Before creating a single screen, I built the design system in Figma. This was a deliberate choice: defining colors, typography, spacing, and components upfront meant every screen would be consistent, and the developer would have a single source of truth from day one.",
+          linkText: 'View the full design system →',
+          linkHref: '/project/tennisconnect/design-system',
           images: [''],
         },
         {

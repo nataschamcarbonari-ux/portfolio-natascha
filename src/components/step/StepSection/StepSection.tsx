@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 import Card from '../../ui/Card/Card';
 import ImagePlaceholder from '../../ui/ImagePlaceholder/ImagePlaceholder';
 import OpportunityFlow from '../../OpportunityFlow';
@@ -11,7 +12,7 @@ interface StepSectionProps {
 }
 
 const StepSection: React.FC<StepSectionProps> = ({ section }) => {
-  const { label, heading, body, cards, images } = section;
+  const { label, heading, body, cards, images, linkText, linkHref } = section;
 
   return (
     <div className={`${styles.section} reveal`}>
@@ -19,6 +20,10 @@ const StepSection: React.FC<StepSectionProps> = ({ section }) => {
       <h2 className={styles.heading}>{heading}</h2>
 
       {body && <p className={styles.body}>{body}</p>}
+
+      {linkText && linkHref && (
+        <Link to={linkHref} className={styles.link}>{linkText}</Link>
+      )}
 
       {cards && cards.length > 0 && (
         <div className={styles.cards}>
