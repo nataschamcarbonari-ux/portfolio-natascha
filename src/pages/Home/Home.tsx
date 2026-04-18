@@ -1,9 +1,9 @@
 import React from 'react';
-import Nav from '../../components/Nav/Nav';
-import Hero from '../../components/Hero/Hero';
-import ProjectsSection from '../../components/ProjectsSection/ProjectsSection';
-import About from '../../components/About/About';
-import Footer from '../../components/Footer/Footer';
+import Nav from '../../components/layout/Nav/Nav';
+import Hero from '../../components/sections/Hero/Hero';
+import ProjectsSection from '../../components/sections/ProjectsSection/ProjectsSection';
+import About from '../../components/sections/About/About';
+import Footer from '../../components/layout/Footer/Footer';
 import { projects } from '../../data/projects';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 

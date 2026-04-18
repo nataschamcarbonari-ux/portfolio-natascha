@@ -1,0 +1,94 @@
+.processList {
+  background: var(--black);
+  color: var(--white);
+  padding: 120px var(--page-padding) 140px;
+  margin-top: 100px;
+}
+
+.header { margin-bottom: 80px; }
+
+.waveLayout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0 32px;
+  align-items: start;
+}
+
+.wave { margin-top: 60px; }
+
+.steps { display: flex; flex-direction: column; }
+
+.step { min-height: 200px; display: flex; align-items: center; }
+.stepLeft  { justify-content: flex-start; padding-right: 38%; }
+.stepRight { justify-content: flex-end;   padding-left:  38%; }
+
+.card {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  padding: 28px 32px 44px;
+  display: block;
+  background: #0d0d0d;
+  overflow: hidden;
+  transition: border-color var(--transition-normal), background var(--transition-normal);
+}
+.card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    rgba(211, 16, 255, 0.06), rgba(101, 111, 248, 0.04), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+.card:hover { border-color: var(--color-primary); background: #111; }
+.card:hover::before { opacity: 1; }
+.card:hover .cardArrow { transform: translateX(6px); color: var(--color-primary); }
+
+.cardNum {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.cardSubtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-subtle);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.cardTags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.cardArrow {
+  position: absolute; bottom: 24px; right: 28px;
+  color: var(--color-border-light); font-size: 1rem;
+  transition: transform var(--transition-normal), color var(--transition-normal);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .processList { padding: 80px var(--page-padding); margin-top: 60px; }
+  .header { margin-bottom: 48px; }
+  .waveLayout { grid-template-columns: 1fr; }
+  .wave { display: none; }
+  .step { min-height: unset; }
+  .stepLeft,
+  .stepRight { padding: 0; justify-content: flex-start; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .waveLayout { grid-template-columns: 1fr; }
+  .wave { display: none; }
+  .step { min-height: unset; }
+  .stepLeft,
+  .stepRight { padding: 0; justify-content: flex-start; }
+}

@@ -1,0 +1,51 @@
+.section {
+  max-width: 800px;
+}
+
+.label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+
+.body {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  max-width: 660px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 20px;
+}
+
+.images {
+  margin-top: 20px;
+}
+
+.imagesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .cards      { grid-template-columns: 1fr; }
+  .imagesGrid { grid-template-columns: 1fr; }
+}

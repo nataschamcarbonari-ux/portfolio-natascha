@@ -1,0 +1,98 @@
+.card {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-color: #111;
+  border: 1px solid transparent;
+  transition: border-color var(--transition-normal);
+}
+
+.card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%);
+  z-index: 0;
+  transition: background var(--transition-normal);
+}
+
+.card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    rgba(211,16,255,0.08), rgba(101,111,248,0.05), transparent 70%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.context {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.desc {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 24px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.75);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 3px;
+  transition: gap var(--transition-fast), color var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+/* Featured variant */
+.featured { flex: 1; height: 100%; }
+.featured .inner { padding: 44px 40px; }
+
+/* Default variant */
+.standard { height: 100%; }
+.standard .inner { padding: 24px; justify-content: flex-end; }
+
+.titleSm {
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.arrow {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.35);
+  margin-top: 10px;
+  align-self: flex-end;
+  transition: transform var(--transition-normal), color var(--transition-normal);
+}

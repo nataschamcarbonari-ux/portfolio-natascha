@@ -48,4 +48,5 @@ export interface Project {
   outcomes: Outcome[];
   tags?: string[];
   coverImage?: string;
+  layoutType?: 'case' | 'standard';
 }

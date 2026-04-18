@@ -1,4 +1,6 @@
 import React from 'react';
+import clsx from 'clsx';
+import styles from './ImagePlaceholder.module.css';
 
 interface ImagePlaceholderProps {
   label?: string;
@@ -13,17 +15,19 @@ const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({
   src,
   alt,
 }) => {
+  const containerClass = clsx(styles.placeholder, aspect === 'wide' ? styles.wide : styles.square);
+
   if (src) {
     return (
-      <div className={`img-placeholder img-placeholder--${aspect}`}>
-        <img src={src} alt={alt ?? label} className="img-placeholder__img" />
+      <div className={containerClass}>
+        <img src={src} alt={alt ?? label} className={styles.img} />
       </div>
     );
   }
 
   return (
-    <div className={`img-placeholder img-placeholder--${aspect}`}>
-      <span className="img-placeholder__label">{label}</span>
+    <div className={containerClass}>
+      <span className={styles.label}>{label}</span>
     </div>
   );
 };

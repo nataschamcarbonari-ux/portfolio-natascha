@@ -90,6 +90,7 @@ export const projects: Project[] = [
   {
     id: 2,
     slug: 'tennisconnect',
+    layoutType: 'case',
     title: 'TennisConnect',
     description:
       'A web platform that replaced a manual, Excel-based tennis ranking system at Clube Paladino with a real-time, accessible digital product — currently live and in testing.',

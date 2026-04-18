@@ -1,0 +1,30 @@
+.card {
+  border: 1px solid #161622;
+  padding: 32px 36px;
+  background: var(--color-bg-card);
+  transition: background var(--transition-fast);
+}
+.card:hover { background: var(--color-bg-card-hover); }
+
+.wide {
+  grid-column: 1 / -1;
+  border-color: #1a1a28;
+  background: #0a0a14;
+}
+
+.label {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  white-space: pre-line;
+}

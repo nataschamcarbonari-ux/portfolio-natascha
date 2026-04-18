@@ -1,0 +1,62 @@
+.page {
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  padding: 120px var(--page-padding) 140px;
+}
+
+.header { margin-bottom: 80px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.card {
+  border: 1px solid var(--color-border);
+  background: #0a0a0a;
+  padding: 40px 36px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background var(--transition-normal), border-color var(--transition-normal);
+}
+.card:hover { background: #0f0f0f; border-color: #333; }
+.card:hover .cardArrow { transform: translateX(5px); color: var(--color-primary); }
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cardContext {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.cardArrow {
+  color: var(--color-border-light);
+  font-size: 1rem;
+  transition: transform var(--transition-normal), color var(--transition-normal);
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--white);
+  flex: 1;
+}
+
+.cardRole {
+  font-size: 0.78rem;
+  color: #444;
+  letter-spacing: 0.04em;
+}
+
+.cardTags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }

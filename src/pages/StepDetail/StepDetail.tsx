@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Nav from '../../components/Nav/Nav';
-import Footer from '../../components/Footer/Footer';
-import StepSection from '../../components/StepSection/StepSection';
-import StepNav from '../../components/StepNav/StepNav';
+import Nav from '../../components/layout/Nav/Nav';
+import Footer from '../../components/layout/Footer/Footer';
+import StepSection from '../../components/step/StepSection/StepSection';
+import StepNav from '../../components/step/StepNav/StepNav';
 import { getProjectBySlug } from '../../data/projects';
 import { getStepById, getPrevStep, getNextStep } from '../../data/steps';
 import { stepContents } from '../../data/stepContents';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import styles from './StepDetail.module.css';
 
 const StepDetail: React.FC = () => {
   const { slug, id } = useParams<{ slug: string; id: string }>();
@@ -36,13 +37,13 @@ const StepDetail: React.FC = () => {
   return (
     <>
       <Nav theme="dark" />
-      <main className="step-detail">
+      <main className={styles.detail}>
 
-        <div className="step-detail__top-title">
-          <p className="step-detail__top-eyebrow">
+        <div className={styles.topTitle}>
+          <p className={styles.topEyebrow}>
             Step {String(stepId).padStart(2, '0')} of {String(project.steps.length).padStart(2, '0')}
           </p>
-          <h1 className="step-detail__top-heading">{step.title}</h1>
+          <h1 className={styles.topHeading}>{step.title}</h1>
         </div>
 
         <StepNav
@@ -54,15 +55,15 @@ const StepDetail: React.FC = () => {
           top
         />
 
-        <div className="step-detail__content">
+        <div className={styles.content}>
           {content?.sections.map((section, i) => (
             <StepSection key={i} section={section} />
           ))}
 
           {(!content || content.sections.length === 0) && (
-            <div className="step-detail__empty">
-              <p className="step-detail__empty-label">Content coming soon</p>
-              <p className="step-detail__empty-text">
+            <div className={styles.empty}>
+              <p className={styles.emptyLabel}>Content coming soon</p>
+              <p className={styles.emptyText}>
                 This step is being documented. Check back soon.
               </p>
             </div>

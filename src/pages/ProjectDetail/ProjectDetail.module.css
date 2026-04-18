@@ -1,0 +1,141 @@
+.page {
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* ── Intro ───────────────────────────────────────────────────────────────── */
+.intro {
+  padding: 160px var(--page-padding) 80px;
+  max-width: 900px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  background: var(--gradient-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-primary);
+  width: fit-content;
+}
+
+.desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #888;
+  max-width: 620px;
+  margin-bottom: 56px;
+}
+
+.meta {
+  display: flex;
+  gap: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.metaItem {}
+
+.metaLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.metaValue {
+  font-size: 0.95rem;
+  color: #888;
+}
+
+/* ── Hero image ──────────────────────────────────────────────────────────── */
+.heroImg {
+  padding: 0 var(--page-padding);
+}
+
+/* ── Body: sidebar + content ─────────────────────────────────────────────── */
+.body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  padding: 80px var(--page-padding) 120px;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  padding-right: 40px;
+}
+
+.content { min-width: 0; }
+
+/* ── Steps ───────────────────────────────────────────────────────────────── */
+.step {
+  padding-bottom: 100px;
+  border-bottom: 1px solid #111;
+  margin-bottom: 100px;
+}
+.step:last-child { border-bottom: none; margin-bottom: 0; }
+
+.stepHeader { margin-bottom: 56px; }
+
+.stepNum {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.15);
+  margin-bottom: 12px;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.0;
+  margin-bottom: 14px;
+  background: var(--gradient-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-primary);
+  width: fit-content;
+}
+
+.stepSubtitle {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--color-text-subtle);
+  max-width: 560px;
+  margin-bottom: 18px;
+}
+
+.stepTags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.stepSections { display: flex; flex-direction: column; gap: 64px; }
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .intro { padding: 100px var(--page-padding) 48px; }
+  .meta  { gap: 24px 40px; }
+  .body  {
+    grid-template-columns: 1fr;
+    padding: 56px var(--page-padding) 80px;
+  }
+  .sidebar { display: none; }
+  .step { padding-bottom: 64px; margin-bottom: 64px; }
+}
+
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .body    { grid-template-columns: 180px 1fr; }
+  .sidebar { padding-right: 24px; }
+}

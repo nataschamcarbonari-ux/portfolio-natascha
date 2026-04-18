@@ -1,0 +1,58 @@
+.detail {
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+.topTitle {
+  padding: 120px var(--page-padding) 48px;
+  background: #050508;
+  border-bottom: 1px solid #111;
+}
+
+.topEyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-bottom: 16px;
+}
+
+.topHeading {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.0;
+  background: var(--gradient-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--color-primary);
+}
+
+.content {
+  padding: 0 var(--page-padding) 80px;
+}
+
+.empty {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.emptyLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.emptyText {
+  font-size: 0.92rem;
+  color: var(--color-text-subtle);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 767.98px) {
+  .topTitle { padding: 90px var(--page-padding) 32px; }
+  .content  { padding: 0 var(--page-padding) 60px; }
+}

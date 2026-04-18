@@ -1,4 +1,6 @@
 import React from 'react';
+import clsx from 'clsx';
+import styles from './Card.module.css';
 
 interface CardProps {
   label: string;
@@ -6,13 +8,11 @@ interface CardProps {
   wide?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ label, text, wide = false }) => {
-  return (
-    <div className={`card ${wide ? 'card--wide' : ''}`}>
-      <p className="card__label">{label}</p>
-      <p className="card__text">{text}</p>
-    </div>
-  );
-};
+const Card: React.FC<CardProps> = ({ label, text, wide = false }) => (
+  <div className={clsx(styles.card, { [styles.wide]: wide })}>
+    <p className={styles.label}>{label}</p>
+    <p className={styles.text}>{text}</p>
+  </div>
+);
 
 export default Card;
