@@ -119,8 +119,8 @@ export const projects: Project[] = [
         id: 3,
         slug: 'step-03',
         title: 'Ideation',
-        subtitle: 'Using an Opportunity Solution Tree and inspired research to scope the solution space before committing to any screen.',
-        tags: ['Opportunity Solution Tree', 'Benchmark', 'Scope Definition'],
+        subtitle: 'Using an Opportunity Solution Tree, user flow and inspired research to scope the solution space before committing to any screen.',
+        tags: ['Opportunity Solution Tree', 'User Flow', 'Benchmark', 'Scope Definition'],
       },
       {
         id: 4,

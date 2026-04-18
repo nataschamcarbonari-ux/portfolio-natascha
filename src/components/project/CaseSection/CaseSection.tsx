@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import Card from '../../ui/Card/Card';
 import ImagePlaceholder from '../../ui/ImagePlaceholder/ImagePlaceholder';
+import OpportunityFlow from '../../OpportunityFlow';
 import type { StepSectionData } from '../../../types';
 import styles from './CaseSection.module.css';
 
@@ -24,7 +25,9 @@ const CaseSection: React.FC<CaseSectionProps> = ({ section, index }) => (
       </div>
     )}
 
-    {section.images && section.images.length > 0 ? (
+    {section.label === 'Opportunity mapping' ? (
+      <OpportunityFlow />
+    ) : section.images && section.images.length > 0 ? (
       <div className={clsx(styles.images, section.images.length > 1 ? styles.imagesGrid : '')}>
         {section.images.map((src, i) => (
           <ImagePlaceholder

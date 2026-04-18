@@ -135,27 +135,28 @@ export const stepContents: Record<string, Record<number, StepContent>> = {
         {
           label: 'Opportunity mapping',
           heading: 'From problems to possibilities',
-          body: "Before jumping to screens, I used an Opportunity Solution Tree to structure how each pain point could be addressed. Starting from the desired outcome — a platform where players manage their tennis life independently — I mapped opportunities derived from the research, and potential solutions for each. This helped me and my dev partner distinguish between what needed to be built first and what could wait for future phases, keeping every decision anchored to a real user need.",
-          images: ['', ''],
+          body: "The Opportunity Solution Tree helped break down user pain points into actionable opportunities and explore different ways to solve them.",
+          images: [''],
         },
         {
-          label: 'User flow & information architecture',
-          heading: 'Understanding what goes where before designing anything',
-          body: "Once the opportunities were mapped, I built a user flow to trace how a player would move through the platform — from login to core actions like checking the ranking, submitting a result, or viewing the games table. This exercise also defined the information architecture: which pages existed, what content lived on each, and how navigation would connect them. Having this structure agreed on early prevented scope creep and gave the developer a clear picture of what needed to be built before any screen was designed.",
-          images: ['', ''],
+          label: 'User flow',
+          heading: 'Defining structure before visuals',
+          body: "Based on the mapped opportunities, I designed the user flow and defined the information architecture. This clarified which pages were needed, what content each would contain, and how navigation would work.",
+          images: ['/user_flow.png'],
         },
         {
           label: 'Inspired research',
-          heading: 'Learning from what already exists',
-          body: "I researched apps across four categories relevant to the project: networking platforms, sports apps, booking systems, and player profile interfaces. The goal wasn't to copy — it was to understand patterns users already know, and to identify where existing solutions fall short for a club-scale context.",
+          heading: 'Learning from existing patterns',
+          body: "I analyzed products across four categories: networking platforms, sports apps, booking systems, and player profiles. The goal was to identify familiar interaction patterns and uncover gaps in existing solutions, especially within a club-level context.",
           cards: [
             { label: 'Networking', text: 'How apps like LinkedIn structure player discovery and connection flows.' },
             { label: 'Sports platforms', text: 'How ranking tables, match results, and standings are displayed in competitive sports apps.' },
             { label: 'Booking systems', text: 'How calendar availability, slot selection, and confirmations work in scheduling interfaces.' },
             { label: 'Player profiles', text: 'What information matters most on an athlete\'s profile — stats, history, contact.' },
           ],
-          images: ['', ''],
+          images: ['https://www.canva.com/design/DAGIZiDgJls/63cvIpcIv8HtonjRkn17xA/view'],
         },
+
         {
           label: 'MVP scope',
           heading: 'Deciding what to build first',
