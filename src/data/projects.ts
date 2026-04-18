@@ -18,56 +18,49 @@ export const projects: Project[] = [
         id: 1,
         slug: 'step-01',
         title: 'Theme Definition',
-        subtitle:
-          'Mapping macro trends and scoping the design space within personal productivity.',
+        subtitle: 'Mapping macro trends and scoping the design space within personal productivity.',
         tags: ['Desk Research', 'Trend Analysis', 'Scoping'],
       },
       {
         id: 2,
         slug: 'step-02',
         title: 'Initial Research',
-        subtitle:
-          'Qualitative research combining desk research with primary data from hybrid and remote workers.',
+        subtitle: 'Qualitative research combining desk research with primary data from hybrid and remote workers.',
         tags: ['Interviews', 'Workshop', 'Desk Research'],
       },
       {
         id: 3,
         slug: 'step-03',
         title: 'Problem Identification',
-        subtitle:
-          'Synthesizing research findings to surface core pain points shared across user profiles.',
+        subtitle: 'Synthesizing research findings to surface core pain points shared across user profiles.',
         tags: ['Synthesis', 'Insights'],
       },
       {
         id: 4,
         slug: 'step-04',
         title: 'User Mapping',
-        subtitle:
-          "Building personas and scenarios grounded in Dell's established user archetypes.",
+        subtitle: "Building personas and scenarios grounded in Dell's established user archetypes.",
         tags: ['Personas', 'Scenarios', 'Archetypes'],
       },
       {
         id: 5,
         slug: 'step-05',
         title: 'Prioritization',
-        subtitle:
-          'Applying the Harris Profile Matrix to evaluate and compare pain points for a structured decision.',
+        subtitle: 'Applying the Harris Profile Matrix to evaluate and compare pain points for a structured decision.',
         tags: ['Harris Profile Matrix', 'Decision Making'],
       },
       {
         id: 6,
         slug: 'step-06',
         title: 'Generation of Alternatives',
-        subtitle:
-          'Structured ideation around the complete focus cycle — Before, During, and After.',
+        subtitle: 'Structured ideation around the complete focus cycle — Before, During, and After.',
         tags: ['Ideation', 'Focus Cycle'],
       },
       {
         id: 7,
         slug: 'step-07',
         title: 'Concept Development',
-        subtitle:
-          "Refining and developing the final product concept within Dell's hardware ecosystem.",
+        subtitle: "Refining and developing the final product concept within Dell's hardware ecosystem.",
         tags: ['Prototyping', 'UX Design'],
       },
     ],
@@ -75,31 +68,106 @@ export const projects: Project[] = [
       {
         id: 1,
         title: 'Strategic Clarity',
-        description:
-          'Defined a precise problem space within a broad theme using structured research methods and prioritization frameworks.',
+        description: 'Defined a precise problem space within a broad theme using structured research methods and prioritization frameworks.',
       },
       {
         id: 2,
         title: 'User Insight',
-        description:
-          "Deep understanding of hybrid and remote worker behaviors, mapped against Dell's established user archetypes.",
+        description: "Deep understanding of hybrid and remote worker behaviors, mapped against Dell's established user archetypes.",
       },
       {
         id: 3,
         title: 'Concept Design',
-        description:
-          'Generated and refined product concepts across the full focus cycle — Before, During, and After sessions.',
+        description: 'Generated and refined product concepts across the full focus cycle — Before, During, and After sessions.',
       },
       {
         id: 4,
         title: 'Ecosystem Fit',
-        description:
-          "Aligned solutions with Dell's product strategy and hardware ecosystem, ensuring viability within the company's design language.",
+        description: "Aligned solutions with Dell's product strategy and hardware ecosystem, ensuring viability within the company's design language.",
       },
     ],
   },
   {
     id: 2,
+    slug: 'tennisconnect',
+    title: 'TennisConnect',
+    description:
+      'A web platform that replaced a manual, Excel-based tennis ranking system at Clube Paladino with a real-time, accessible digital product — currently live and in testing.',
+    context: 'Personal Project · Clube Paladino',
+    role: 'Product Designer',
+    theme: 'Sports · Digital Product',
+    featured: false,
+    tags: ['UX Research', 'Product Design', 'Design System', 'Prototyping'],
+    coverImage: 'https://picsum.photos/seed/tennisconnect/1200/800',
+    steps: [
+      {
+        id: 1,
+        slug: 'step-01',
+        title: 'Research',
+        subtitle: 'Discovering the real problem behind the Excel-based ranking process through contextual research and an in-depth interview.',
+        tags: ['In-depth Interview', 'Contextual Research', 'Double Diamond'],
+      },
+      {
+        id: 2,
+        slug: 'step-02',
+        title: 'Problem Definition',
+        subtitle: 'Mapping the user journey, identifying pain points, and writing a problem statement that guided every subsequent decision.',
+        tags: ['User Journey', 'Problem Statement', 'Opportunity Mapping'],
+      },
+      {
+        id: 3,
+        slug: 'step-03',
+        title: 'Ideation',
+        subtitle: 'Using an Opportunity Solution Tree and inspired research to scope the solution space before committing to any screen.',
+        tags: ['Opportunity Solution Tree', 'Benchmark', 'Scope Definition'],
+      },
+      {
+        id: 4,
+        slug: 'step-04',
+        title: 'Design System',
+        subtitle: 'Building the visual foundation — typography, color, and components — before designing any screen.',
+        tags: ['Design System', 'Figma', 'Visual Identity'],
+      },
+      {
+        id: 5,
+        slug: 'step-05',
+        title: 'Prototyping',
+        subtitle: 'From lo-fi sketches to high-fidelity screens across all four delivery phases: Login, Games Table, Rankings, and Profile.',
+        tags: ['Lo-Fi', 'Hi-Fi', 'Figma', 'User Flows'],
+      },
+      {
+        id: 6,
+        slug: 'step-06',
+        title: 'Dev Collaboration & Delivery',
+        subtitle: 'Working hand-in-hand with the developer through four structured deliveries to bring the design intent into a live product.',
+        tags: ['Handoff', 'Agile', 'React', '.NET'],
+      },
+    ],
+    outcomes: [
+      {
+        id: 1,
+        title: 'Live Product',
+        description: 'A fully functional web application currently in testing at Clube Paladino, replacing Excel entirely for ranking and game management.',
+      },
+      {
+        id: 2,
+        title: 'Design System',
+        description: 'A reusable component library built in Figma, ensuring visual consistency and enabling faster future iterations.',
+      },
+      {
+        id: 3,
+        title: 'Decentralized Access',
+        description: 'Any club administrator can now manage rankings and draws independently — removing the single point of failure the old process had.',
+      },
+      {
+        id: 4,
+        title: 'Foundation for Growth',
+        description: 'A defined backlog of future features — player profiles, H2H stats, historical data — structured as modular expansions ready to be built.',
+      },
+    ],
+  },
+  {
+    id: 3,
     slug: 'brand-system',
     title: 'Brand System',
     description: 'A comprehensive brand identity and design system for a consumer product launch.',
@@ -112,7 +180,7 @@ export const projects: Project[] = [
     outcomes: [],
   },
   {
-    id: 3,
+    id: 4,
     slug: 'ux-research',
     title: 'Enterprise UX Research',
     description: 'End-to-end user research initiative to improve task completion across a B2B platform.',
@@ -125,7 +193,7 @@ export const projects: Project[] = [
     outcomes: [],
   },
   {
-    id: 4,
+    id: 5,
     slug: 'service-design',
     title: 'Public Service Redesign',
     description: 'Service design project mapping citizen journeys and redesigning touchpoints for a public agency.',
@@ -138,7 +206,7 @@ export const projects: Project[] = [
     outcomes: [],
   },
   {
-    id: 5,
+    id: 6,
     slug: 'motion-ui',
     title: 'Motion & Interaction',
     description: 'Designing micro-interactions and motion principles for a consumer mobile application.',
