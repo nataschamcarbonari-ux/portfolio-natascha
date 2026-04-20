@@ -40,6 +40,14 @@ const About: React.FC = () => (
         >
           LinkedIn <span className={styles.linkArrow}>↗</span>
         </a>
+        <a
+          href="https://www.behance.net/nataschcarbona"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.link}
+        >
+          Behance <span className={styles.linkArrow}>↗</span>
+        </a>
         <a href="mailto:nataschamcarbonari@gmail.com" className={styles.link}>
           Email <span className={styles.linkArrow}>↗</span>
         </a>

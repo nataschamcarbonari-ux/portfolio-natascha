@@ -96,3 +96,54 @@
   align-self: flex-end;
   transition: transform var(--transition-normal), color var(--transition-normal);
 }
+
+/* ── Coming Soon badge ── */
+.comingSoonBadge {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(4px);
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+/* ── Live / Featured badge (roxo vibrante, para TennisConnect) ── */
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border: 1px solid rgba(211, 16, 255, 0.5);
+  color: #e875ff;
+  background: rgba(211, 16, 255, 0.13);
+  backdrop-filter: blur(6px);
+  margin-bottom: 10px;
+  align-self: flex-start;
+  box-shadow: 0 0 14px rgba(211, 16, 255, 0.22), inset 0 0 8px rgba(211, 16, 255, 0.08);
+}
+
+.liveBadgeDot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #d310ff;
+  box-shadow: 0 0 6px #d310ff;
+  flex-shrink: 0;
+  animation: badgePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(0.65); }
+}

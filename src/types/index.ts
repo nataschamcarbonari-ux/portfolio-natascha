@@ -49,6 +49,7 @@ export interface Project {
   role: string;
   theme: string;
   featured?: boolean;
+  comingSoon?: boolean;
   steps: Step[];
   outcomes: Outcome[];
   tags?: string[];

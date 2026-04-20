@@ -14,6 +14,23 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'default' 
     ? { backgroundImage: `url(${project.coverImage})` }
     : {};
 
+  const isLive = project.slug === 'tennisconnect';
+
+  const Badge = () => {
+    if (isLive) {
+      return (
+        <span className={styles.liveBadge}>
+          <span className={styles.liveBadgeDot} />
+          See it live
+        </span>
+      );
+    }
+    if (project.comingSoon) {
+      return <span className={styles.comingSoonBadge}>Coming Soon</span>;
+    }
+    return null;
+  };
+
   if (variant === 'featured') {
     return (
       <Link
@@ -22,6 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'default' 
         style={bgStyle}
       >
         <div className={styles.inner}>
+          <Badge />
           <p className={styles.context}>{project.context}</p>
           <h2 className={styles.title}>{project.title}</h2>
           <p className={styles.desc}>{project.description}</p>
@@ -38,6 +56,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, variant = 'default' 
       style={bgStyle}
     >
       <div className={styles.inner}>
+        <Badge />
         <p className={styles.context}>{project.context}</p>
         <h3 className={styles.titleSm}>{project.title}</h3>
         <span className={styles.arrow}>→</span>

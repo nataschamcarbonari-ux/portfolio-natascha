@@ -186,7 +186,7 @@ export const stepContents: Record<string, Record<number, StepContent>> = {
           body: "Before creating a single screen, I built the design system in Figma. This was a deliberate choice: defining colors, typography, spacing, and components upfront meant every screen would be consistent, and the developer would have a single source of truth from day one.",
           linkText: 'View the full design system →',
           linkHref: '/project/tennisconnect/design-system',
-          images: [''],
+          images: ['/DS.png'],
         },
         {
           label: 'Components',
@@ -199,7 +199,6 @@ export const stepContents: Record<string, Record<number, StepContent>> = {
             { label: 'Forms', text: 'Input fields, validation states, and error messages designed to match the authentication flows.' },
             { label: 'Navigation', text: 'Tab bar and header components adapted for both authenticated and public-facing screens.', wide: true },
           ],
-          images: ['', ''],
         },
       ],
     },
@@ -260,7 +259,7 @@ export const stepContents: Record<string, Record<number, StepContent>> = {
           label: 'Current status',
           heading: 'Live and in testing',
           body: "The platform is currently deployed and being tested by club members at Clube Paladino. The MVP covers authentication, monthly game draws, and three ranking table views. The club's administrators can now manage the entire ranking process independently — no Excel required.",
-          images: [''],
+          images: ['/prototype.png'],
         },
         {
           label: 'What comes next',
